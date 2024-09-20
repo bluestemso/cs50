@@ -1,6 +1,8 @@
-import sys
+import argparse
 
-if len(sys.argv) == 1:
+parser = argparse.ArgumentParser(description="Meow like a cat")
+parser.add_argument("-n", default=1, help="NUmber of times to meow", type=int)
+args = parser.parse_args()
+
+for _ in range(args.n):
     print("meow")
-else:
-    print('usage: meows.py')
